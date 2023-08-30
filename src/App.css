@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: Comfortaa, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #FAFAFA;
+  color: #333;
+}
+
+/* header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background: #FFF;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 120px;
+}
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  margin-left: 1rem;
+  margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #eac8c8;
+}
+
+.nav-icon {
+  margin-right: .5rem;
+}
+
+/* Section */
+.intro-section,
+.plans-section,
+.contact-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #eac8c8;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.content img {
+  flex:1;
+  max-width: 350px;
+  margin-right: 1rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.intro-text,
+.plan-text {
+  flex: 2;
+  margin-left: 1rem;
+  font-size: .9rem;
+  text-align: left;
+  color: #666;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.contact-form label {
+  display: block;
+  text-align: left;
+  margin-bottom: .5rem;
+  color: #666;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: .5rem;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form button {
+  padding: .5rem 2rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #eac8c8;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+  background-color: #333;
+}
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #FFF;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-link {
+  margin: 0 1rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  color: #eac8c8;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+}
+
+.plan-interests {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.plan-interest {
+  padding: .5rem 1rem;
+  margin: .5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #eac8c8;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.plan-interest:hover {
+  background-color: #333;
+}
+
+.plan-interest.selected {
+  background-color: #333;
+}
+
+#plans {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.plan-item {
+  flex: 1;
+  max-width: 400px;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+  min-height: 600px;
+}
+
+.plan-item:hover {
+  transform: translateY(-5px);
+}
+
+.plan-image {
+  width: 100%;
+  max-height: 200px;
+  max-height: 150px;
+  object-fit: cover; /* This will fit the image into the dimensions nicely */
+}
+
+
+.plan-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #eac8c8;
+}
+
+.plan-description {
+  font-size: .9rem;
+  margin-bottom: 1rem;
+  color: #666;
+  text-align: left;
+}
+
+.plan-points {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.plan-point {
+  margin-bottom: 1.0rem;
+  color: #666;
+  text-align: left;
+}
+
+.content.ct {
+  margin-bottom: 2rem;
+}
