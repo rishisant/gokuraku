@@ -9,18 +9,20 @@ import pic2 from './pic2.jpeg';
 import pic3 from './pic3.jpeg';
 import pic_main from './pic_main.jpg';
 import pic5 from './pic5.jpeg';
+import pic6 from './pic6.jpeg';
 import { useState } from 'react';
 
-import { faInfoCircle, faCalendarCheck, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faInfoCircle, faCalendarCheck, faEnvelope, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 
 library.add(fab)
-library.add(faInfoCircle, faCalendarCheck, faEnvelope)
+library.add(faInfoCircle, faCalendarCheck, faEnvelope, faQuestionCircle)
 
 const App = () => (
     <>
       <Header />
       <Intro />
       <Plans />
+      <FAQ />
       <ContactForm />
       <Footer />
     </>
@@ -39,6 +41,10 @@ const Header = () => (
           <FontAwesomeIcon icon="calendar-check" className="nav-icon" />
           Plans
         </a>
+        <a href="#faq" className="nav-link">
+          <FontAwesomeIcon icon="question-circle" className="nav-icon" />
+          FAQ
+        </a>
         <a href="#contact" className="nav-link">
           <FontAwesomeIcon icon="envelope" className="nav-icon" />
           Contact
@@ -51,7 +57,7 @@ const Header = () => (
 const Intro = () => (
     <section id="intro" className="intro-section">
       <h2 className="section-title">Introduction: Who are we?</h2>
-      <article className="content">
+      <article className="content in">
         <img src={pic_main} alt="Picture" className="intro-image" />
         <p className="intro-text">
         At Gokuraku, we embody the magic of Tokyo's breathtaking landscapes and the vibrant pulse of its city life, all wrapped up in Japan's rich and diverse cultural history. Our name, Gokuraku or 極楽 in Kanji, echoes the Buddhist concept of the pure land - an ideal, serene sphere and a blissful antidote to chaos. This is what we strive to provide our guests - an immaculate, joyous break from the mundane, a gateway to paradise.
@@ -69,10 +75,30 @@ const Intro = () => (
 
 const Plans = () => {
   const images = [pic1, pic2, pic3];
+  const [flip, setFlip] = useState(false);
+  const destinations = [
+    "Lake Kawaguchiko (河口湖)",
+    "Mt. Fuji Fifth Station (富士山五合目)",
+    "West Lake Healing Village (西湖癒しの里)",
+    "Kachikachi Ropeway (かちかちロープウェイ)",
+    "Shinyayama Shrine (新屋山神社)",
+    "Fuji Azuma Shrine (富士阿祖山太神社)",
+    "Kitamoto Asama Shrine (北本郷浅間神社)",
+    "Oshino Hakkai (忍野八海)",
+    "Oishi Park (大石公園)",
+    "Arashiyama Asama Shrine (嵐山浅間神社)",
+    "Ninja Village (忍びの村)",
+    "Arakura Asama Shrine (新倉山浅間神社)",
+    "Lake Ashi (芦ノ湖)",
+    "Owakudani (大涌谷)",
+    "Hakone Ropeway (箱根ロープウェイ)",
+    "Gotemba Premium Outlets (御殿場アウトレット)",
+
+  ];
   const plans = [
     { 
       name: "Plan A: Tokyo's All Access Pass ($800)", 
-      description: "Experience the magic of Tokyo at your own pace. This plan gives you the freedom to create a personalized itinerary tailored to your interests.", 
+      description: "Experience the magic of Tokyo at your own pace. This plan gives you the freedom to create a personalized itinerary tailored to your interests. Click on the card to see the full list of destinations.", 
       bulletPoints: [
         "Choose up to 4 preferred destinations",
         "Guided tour with image and verbal explanations",
@@ -114,21 +140,67 @@ const Plans = () => {
 
       <div className="content">
       {plans.map((plan, i) => (
-        <article key={i} className="plan-item">
-          <img src={plan.image} alt={`Plan ${i+1}`} className="plan-image" />
-          <h3 className="plan-title">{plan.name}</h3>
-          <p className="plan-description">{plan.description}</p>
-          <ul className="plan-points">
-            {plan.bulletPoints.map((point, j) => (
-              <li key={j} className="plan-point">• {point}</li>
-            ))}
-          </ul>
+        <article onClick={() => i === 0 ? setFlip(!flip) : null} key={i} className={`plan-item ${i === 0 && flip ? 'flip' : ''}`}>
+          {!flip || i !== 0 ? (
+            <>
+              <img src={plan.image} alt={`Plan ${i+1}`} className="plan-image" />
+              <h3 className="plan-title">{plan.name}</h3>
+              <p className="plan-description">{plan.description}</p>
+              <ul className="plan-points">
+                {plan.bulletPoints.map((point, j) => (
+                  <li key={j} className="plan-point">• {point}</li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <ul>
+              <h3 className="plan-title">Destinations</h3>
+              {destinations.map((destination, j) => (
+                <li className="destin" ikey={j}>{destination}</li>
+              ))}
+            </ul>
+          )}
         </article>
       ))}
       </div>
-      </section>
+    </section>
   );
 };
+
+const FAQ = () => (
+  <section id="faq" className="faq-section">
+    <h2 className="section-title">Frequently Asked Questions</h2>
+    
+    <article className="content-faq">
+    <img src={pic6} alt="Picture" className="intro-image faq" />
+
+      <h3 className="faq-question">How long is the private 1-day Mount Fuji Hakone tour with an English-speaking driver guide?
+      <p className="faq-answer">Our tours typically last around 10 hours, providing a comprehensive and immersive experience.</p></h3>
+      
+
+      <h3 className="faq-question">Is there insurance coverage for the private vehicles used in the tours?
+      <p className="faq-answer">Yes, all our vehicles are covered by comprehensive insurance policies. For your peace of mind, we ensure a safe, secure, and comfortable journey for all our guests.</p>
+      </h3>
+      
+
+      <h3 className="faq-question">Which languages can be accommodated by the interpreters and guides?
+      <p className="faq-answer">Our dynamic team comprises staff fluent in both English and Japanese. We are equipped to provide you with seamless communication throughout your tour.</p>
+      </h3>
+      
+
+      <h3 className="faq-question">What is your cancellation policy?
+      <p className="faq-answer">We offer a full refund for cancellations made up to 24 hours before the start of the tour.</p>
+      </h3>
+      
+
+      <h3 className="faq-question">Additional Information
+      <p className="faq-answer">Please note that our tours may not be suitable for people with back issues or those who are pregnant. If you have a heart condition or other serious ailments, we advise against participation. Our tours may require a moderate level of physical fitness. Additionally, all our tours are private, ensuring a personalized experience exclusive to your group.</p>
+      </h3>
+      
+
+    </article>
+  </section>
+);
 
 const ContactForm = () => {
   const [plan, setPlan] = useState(null);
@@ -195,7 +267,7 @@ const ContactForm = () => {
 
 const Footer = () => (
   <footer>
-    <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" className="social-link">
+    <a href="https://www.tiktok.com/@gokuraku.jp03" target="_blank" rel="noopener noreferrer" className="social-link">
       <FontAwesomeIcon icon={['fab', 'tiktok']} className="social-icon" />
     </a>
     <a href="https://www.instagram.com/gokuraku._jp/" target="_blank" rel="noopener noreferrer" className="social-link">

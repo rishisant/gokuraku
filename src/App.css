@@ -73,6 +73,11 @@ body {
   flex-wrap: wrap;
 }
 
+.content.in {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 .content img {
   flex:1;
   max-width: 350px;
@@ -94,7 +99,9 @@ body {
 .contact-form {
   max-width: 500px;
   margin: 0 auto;
+  margin-top: 2rem;
 }
+
 .contact-form label {
   display: block;
   text-align: left;
@@ -232,4 +239,65 @@ footer {
 
 .content.ct {
   margin-bottom: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.faq-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.faq-question {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #eac8c8;
+  text-align: left;
+}
+
+.faq-answer {
+  font-size: .9rem;
+  color: #666;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+
+/* For the additional class `section-title` in the `contact-section` */
+.contact-section .section-title {
+  color: #eac8c8;
+}
+
+.intro-image.faq{
+  float: left;
+  max-width: 350px;
+  margin-right: 1rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.content-faq {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content-intro {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.destin {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-align: left;
+  padding: 0 10px;
 }
