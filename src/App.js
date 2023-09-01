@@ -109,7 +109,7 @@ const Plans = () => {
       image: pic1,
     },
     {
-      name: "Plan B: Honeymoon Heights ($1200)",
+      name: "Plan B: Honeymoon Heights ($1000)",
       description: "A unique honeymoon experience in Tokyo. This romantic plan includes a trip to Mount Fuji, a private spa, and a drone photography session.",
       bulletPoints: [
         "Access to iconic Tokyo destinations including Mount Fuji",
@@ -121,7 +121,7 @@ const Plans = () => {
       image: pic2,
     },
     {
-      name: "Plan C: Tokyo's Uncharted Adventure ($1000)",
+      name: "Plan C: Tokyo's Uncharted Adventure ($900)",
       description: "This tour takes the guesswork out of your trip. Let our experienced local drivers create the perfect itinerary for you.",
       bulletPoints: [
         "Personalized itinerary based on the day's weather and situation",
