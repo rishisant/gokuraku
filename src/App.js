@@ -89,6 +89,8 @@ const Plans = () => {
     "Arashiyama Asama Shrine (嵐山浅間神社)",
     "Ninja Village (忍びの村)",
     "Arakura Asama Shrine (新倉山浅間神社)",
+    "Shinyayama Shrine (新屋山神社),
+    "Arayama Shrine (荒山神社)",
     "Lake Ashi (芦ノ湖)",
     "Owakudani (大涌谷)",
     "Hakone Ropeway (箱根ロープウェイ)",
